@@ -8,7 +8,7 @@ from `planted-bug`, where the query for waiting holds ignores format, with these
 - a comment on the matcher's unit test that pointed at the query.
 
 That first commit was the whole repository, so there was no history to read. A fresh Claude agent, with
-no knowledge of the agreed rules or the planted bug, had the Reqnroll skill the team uses at work and was
+no knowledge of the agreed rules or the planted bug, had the Reqnroll skill the team uses at Insignis and was
 given the request a developer would type:
 
 > /reqnroll-scenarios Add Reqnroll scenarios covering how returned copies fill holds in this API. The
