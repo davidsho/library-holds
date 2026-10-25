@@ -13,7 +13,7 @@ public sealed class HoldRepository(LibraryDbContext db) : IHoldRepository
 {
     public async Task<IReadOnlyList<Hold>> FindWaitingHoldsAsync(string title, Format format, CancellationToken cancellationToken) =>
         await db.Holds
-            .Where(h => h.Status == HoldStatus.Waiting && h.Title == title && h.Format == format)
+            .Where(h => h.Status == HoldStatus.Waiting && h.Title == title)
             .ToListAsync(cancellationToken);
 }
 
