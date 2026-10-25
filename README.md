@@ -54,6 +54,19 @@ what the API returns afterwards. They're slower, and they catch what a mocked re
 
 Formats are `Hardback`, `Paperback`, `LargePrint` and `Audiobook`.
 
+## Known gaps
+
+The four rules don't cover everything, and this sample deliberately leaves the gaps alone rather than
+deciding them without anyone agreeing. A fresh Claude, asked to write scenarios on the
+`experiment/scenarios-from-code` branch, listed these as edge cases it would have asked about:
+
+- A copy returned while it's already on the hold shelf fills a second hold, so two holds point at the
+  same copy.
+- A copy returned again with a different title or format keeps the title and format it was first
+  returned with.
+- Titles match exactly, so "the hobbit" doesn't fill a hold on "The Hobbit".
+- Two holds placed at the same instant are filled in no particular order.
+
 ## Licence
 
 The sample uses FluentAssertions 7.x, the last Apache-licensed version. Version 8 needs a paid licence
