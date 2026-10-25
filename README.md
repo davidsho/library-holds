@@ -69,5 +69,5 @@ deciding them without anyone agreeing. A fresh Claude, asked to write scenarios 
 
 ## Licence
 
-The sample uses FluentAssertions 7.x, the last Apache-licensed version. Version 8 needs a paid licence
-for commercial use.
+The sample uses FluentAssertions 8, which is free for non-commercial use. Using it commercially needs a
+paid licence; version 7.x, the last Apache-licensed one, works the same way for everything here.
