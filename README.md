@@ -2,7 +2,7 @@
 
 A small library holds API, with two kinds of test: xUnit unit tests for the logic that's local to one
 class, and Reqnroll scenarios that test the whole journey through the real API. It's the companion to
-the essay *Rules You Can Run*.
+the essays *Who Decided This Rule?* and *How We Write Reqnroll Tests*.
 
 A member places a hold on a title in a format. When a copy is returned, the API decides whether it
 fills a waiting hold. If it does, the copy goes on the hold shelf, the hold is ready for collection,
@@ -19,6 +19,12 @@ The spec for these is [HoldsForReturnedCopies.feature](tests/LibraryHolds.Scenar
 
 The app and its tests were written by Claude. The four rules were agreed with it before any Gherkin
 was written.
+
+## The skill
+
+[`.claude/skills/reqnroll-scenarios/`](.claude/skills/reqnroll-scenarios/SKILL.md) is a generic version of the
+Claude Code skill my team uses to write Reqnroll scenarios. Claude Code picks it up in this repo, so
+`/reqnroll-scenarios` works here. To use it in your own repo, copy the folder into its `.claude/skills/`.
 
 ## Running
 
