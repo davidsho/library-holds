@@ -1,6 +1,8 @@
 <Project>
   <PropertyGroup>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <!-- Lets the PackageVersion below override a version another package brings in. -->
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="10.0.3" />
@@ -19,5 +21,8 @@
     <PackageVersion Include="WireMock.Net" Version="2.20.0" />
     <PackageVersion Include="Bogus" Version="35.6.5" />
     <PackageVersion Include="NodaTime" Version="3.3.6" />
+
+    <!-- WireMock.Net brings in 2.3.0, which has a known vulnerability (GHSA-6527-9fp8-r4x6). -->
+    <PackageVersion Include="Microsoft.AspNetCore.WebUtilities" Version="2.3.14" />
   </ItemGroup>
 </Project>
