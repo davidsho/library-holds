@@ -45,6 +45,10 @@ public sealed class HoldsDriver(LibraryHoldsApp app)
     public Task AssertCancelledAsync(PlacedHold hold) =>
         AssertIsAsync(hold, Expected(hold, "Cancelled"), "{0}'s hold should still be cancelled");
 
+    /// <summary>Ready with that copy, until the collect-by time worked out independently from when the copy was returned.</summary>
+    public Task AssertReadyForCollectionAsync(PlacedHold hold, ReturnedCopy copy) =>
+        AssertReadyForCollectionAsync(hold, copy, Wire.Instant(ExpectedCollectBy.For(copy.ReturnedAt)));
+
     public Task AssertReadyForCollectionAsync(PlacedHold hold, ReturnedCopy copy, string collectBy) =>
         AssertIsAsync(
             hold,

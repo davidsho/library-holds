@@ -37,6 +37,13 @@ public sealed class NotificationsDriver(LibraryHoldsApp app)
         Messages().Should().BeEmpty("nobody should have been told anything");
     }
 
+    /// <summary>For a bystander. Only meaningful after the app has settled, which is why this waits first.</summary>
+    public async Task AssertNotToldAnythingAsync(string member)
+    {
+        await app.WaitUntilSettledAsync();
+        Messages().Where(m => m.MemberId == member).Should().BeEmpty("{0} should not have been told anything", member);
+    }
+
     private IEnumerable<HoldReadyMessageJson> Messages() =>
         app.NotificationProvider.HoldReadyMessages().Select(StrictJson.Parse<HoldReadyMessageJson>);
 }
