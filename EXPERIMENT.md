@@ -42,6 +42,6 @@ driver methods, exactly as it left them.
 
 ## What the clues have in common
 
-Every clue it used was written by someone who knew holds match on format: the parameter, the index and the README all
-came from the agreed rules. The model still depended on rules a person had decided. It found them in quieter places
+Every clue it used, the parameter, the index and the README, was written from the agreed rules, by the Claude that
+built the app from them. The model still depended on rules a person had decided. It found them in quieter places
 than a comment.
